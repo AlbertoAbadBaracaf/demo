@@ -30,7 +30,7 @@ public class EmployeeRestAdapter {
         return restMapper.toEmployeeResponseList(servicePort.findAll());
     }
 
-    @GetMapping("/v1/api/{id}")
+    @GetMapping("/v1/api/{idEmployee}")
     public EmployeeResponse findById(@PathVariable Integer idEmployee) {
         return restMapper.toEmployeeResponse(servicePort.findById(idEmployee));
     }
