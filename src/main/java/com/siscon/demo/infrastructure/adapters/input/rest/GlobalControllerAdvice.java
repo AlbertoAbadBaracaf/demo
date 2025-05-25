@@ -1,6 +1,6 @@
 package com.siscon.demo.infrastructure.adapters.input.rest;
 
-import com.siscon.demo.domain.exception.EmployeeNotFoudException;
+import com.siscon.demo.domain.exception.EmployeeNotFoundException;
 import com.siscon.demo.domain.model.ErrorResponse;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ import static com.siscon.demo.utils.ErrorCatalog.EMPLOYEE_NOT_FOUND;
 @RestControllerAdvice
 public class GlobalControllerAdvice {
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(EmployeeNotFoudException.class)
+    @ExceptionHandler(EmployeeNotFoundException.class)
     public ErrorResponse handleEmployeeNotFoundException() {
         return ErrorResponse.builder()
                 .code(EMPLOYEE_NOT_FOUND.getCode())

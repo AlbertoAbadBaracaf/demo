@@ -20,14 +20,14 @@ import java.time.LocalDate;
 public class EmployeeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idEmployee;
+    private Integer idemployee;
 
-    private String firstName;
-    private String middleName;
-    private String lastName;
-    private String secondSurName;
+    private String firstname;
+    private String middlename;
+    private String lastname;
+    private String secondsurname;
     private Integer age;
     private String gender;
-    private LocalDate birthDate;
+    private LocalDate birthdate;
     private String position;
 }

@@ -24,7 +24,7 @@ public class EmployeePersistenceAdapter implements EmployeePersistencePort {
 
     @Override
     public List<Employee> findAll() {
-        return mapper.toEmployeetList(repository.findAll());
+        return mapper.toEmployeeList(repository.findAll());
     }
 
     @Override

@@ -12,15 +12,17 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EmployeeCreateRequest {
-    @NotBlank(message = "Field firstName cannot be empty or null.")
-    private String firstName;
+    @NotBlank(message = "Field firstname cannot be empty or null.")
+    private String firstname;
 
-    private String middleName;
+    @NotNull(message = "Field middlename cannot be null.")
+    private String middlename;
 
-    @NotNull(message = "Field lastName cannot be empty or null.")
-    private String lastName;
+    @NotBlank(message = "Field lastname cannot be empty or null.")
+    private String lastname;
 
-    private String secondSurName;
+    @NotNull(message = "Field secondsurname cannot be null.")
+    private String secondsurname;
 
     @NotNull(message = "Field age cannot be null.")
     private Integer age;
@@ -28,8 +30,8 @@ public class EmployeeCreateRequest {
     @NotBlank(message = "Field gender cannot be empty or null.")
     private String gender;
 
-    @NotBlank(message = "Field birthDate cannot be empty or null.")
-    private LocalDate birthDate;
+    @NotNull(message = "Field birthdate cannot be null.")
+    private LocalDate birthdate;
 
     @NotBlank(message = "Field position cannot be empty or null.")
     private String position;

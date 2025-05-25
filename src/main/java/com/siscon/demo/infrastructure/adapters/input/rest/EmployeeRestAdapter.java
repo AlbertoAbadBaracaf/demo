@@ -42,7 +42,7 @@ public class EmployeeRestAdapter {
                         servicePort.save(restMapper.toEmployee(request))));
     }
 
-    @PutMapping("/v1/api/{id}")
+    @PutMapping("/v1/api/{idEmployee}")
     public EmployeeResponse update(@PathVariable Integer idEmployee, @Valid @RequestBody EmployeeCreateRequest request) {
         return restMapper.toEmployeeResponse(
                 servicePort.update(idEmployee, restMapper.toEmployee(request)));

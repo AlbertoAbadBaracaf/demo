@@ -12,5 +12,5 @@ public interface EmployeePersistenceMapper {
 
     Employee toEmployee(EmployeeEntity entity);
 
-    List<Employee> toEmployeetList(List<EmployeeEntity> entityList);
+    List<Employee> toEmployeeList(List<EmployeeEntity> entityList);
 }

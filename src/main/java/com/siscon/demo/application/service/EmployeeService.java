@@ -2,7 +2,7 @@ package com.siscon.demo.application.service;
 
 import com.siscon.demo.application.ports.input.EmployeeServicePort;
 import com.siscon.demo.application.ports.output.EmployeePersistencePort;
-import com.siscon.demo.domain.exception.EmployeeNotFoudException;
+import com.siscon.demo.domain.exception.EmployeeNotFoundException;
 import com.siscon.demo.domain.model.Employee;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class EmployeeService implements EmployeeServicePort {
 
     @Override
     public Employee findById(Integer idEmployee) {
-        return persistencePort.findById(idEmployee).orElseThrow(EmployeeNotFoudException::new);
+        return persistencePort.findById(idEmployee).orElseThrow(EmployeeNotFoundException::new);
     }
 
     @Override
@@ -34,16 +34,16 @@ public class EmployeeService implements EmployeeServicePort {
     public Employee update(Integer idEmployee, Employee employee) {
         return persistencePort.findById(idEmployee)
                 .map(savedEmployee -> {
-                    savedEmployee.setFirstName(employee.getFirstName());
-                    savedEmployee.setMiddleName(employee.getMiddleName());
-                    savedEmployee.setLastName(employee.getLastName());
-                    savedEmployee.setSecondSurName(employee.getSecondSurName());
+                    savedEmployee.setFirstname(employee.getFirstname());
+                    savedEmployee.setMiddlename(employee.getMiddlename());
+                    savedEmployee.setLastname(employee.getLastname());
+                    savedEmployee.setSecondsurname(employee.getSecondsurname());
                     savedEmployee.setAge(employee.getAge());
                     savedEmployee.setGender(employee.getGender());
-                    savedEmployee.setBirthDate(employee.getBirthDate());
+                    savedEmployee.setBirthdate(employee.getBirthdate());
                     savedEmployee.setPosition(employee.getPosition());
                     return persistencePort.save(savedEmployee);
                 })
-                .orElseThrow(EmployeeNotFoudException::new);
+                .orElseThrow(EmployeeNotFoundException::new);
     }
 }
