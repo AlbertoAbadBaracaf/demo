@@ -131,22 +131,7 @@ git clone https://github.com/tu-usuario/siscon-abad.git
 cd siscon-abad
 ```
 
-2. Configurar la base de datos PostgreSQL:
-
-```bash
-# Crear la base de datos
-psql -U postgres -c "CREATE DATABASE siscon;"
-```
-
-3. Configurar las variables de entorno (opcional, hay valores por defecto):
-
-```bash
-export DB_HOST=jdbc:postgresql://localhost:5432/siscon
-export DB_USER=postgres
-export DB_PASSWORD=tu_contraseña
-```
-
-4. Compilar y ejecutar la aplicación:
+2. Compilar y ejecutar la aplicación:
 
 ```bash
 ./mvnw clean install
@@ -179,14 +164,14 @@ Cuerpo de la solicitud:
 
 ```json
 {
-  "first_name": "Juan",
-  "middle_name": "Carlos",
-  "last_name": "Pérez",
-  "second_sur_name": "Gómez",
-  "age": 30,
-  "gender": "Masculino",
-  "birth_date": "1993-05-15",
-  "position": "Desarrollador Senior"
+  "firstname": "Marisol",
+  "middlename": "Roberta",
+  "lastname": "Abad",
+  "secondsurname": "Nuñez",
+  "age": "18",
+  "gender": "Femenino",
+  "birthdate": "1985-11-13",
+  "position": "Desarrolador"
 }
 ```
 
