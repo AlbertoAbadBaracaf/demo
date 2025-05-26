@@ -34,6 +34,7 @@ public class EmployeeService implements EmployeeServicePort {
     public Employee update(Integer idEmployee, Employee employee) {
         return persistencePort.findById(idEmployee)
                 .map(savedEmployee -> {
+                    savedEmployee.setIdemployee(idEmployee);
                     savedEmployee.setFirstname(employee.getFirstname());
                     savedEmployee.setMiddlename(employee.getMiddlename());
                     savedEmployee.setLastname(employee.getLastname());

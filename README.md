@@ -198,11 +198,6 @@ PUT /employees/v1/api/{idEmployee}
 
 Cuerpo de la solicitud: igual que en la creación.
 
-### Eliminar un empleado
-
-```
-DELETE /employees/v1/api/{idEmployee}
-```
 
 ## Contribución
 
