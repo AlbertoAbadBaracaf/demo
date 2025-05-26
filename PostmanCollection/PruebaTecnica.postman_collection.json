@@ -1,0 +1,434 @@
+{
+	"info": {
+		"_postman_id": "9b9a5b67-d531-4d47-bd57-d663fbcdae5f",
+		"name": "PruebaTecnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19020617"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees/v1/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"v1",
+						"api"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 ok",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/employees/v1/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"v1",
+								"api"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 May 2025 23:36:10 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"firstname\": \"Alberto\",\n        \"middlename\": \"Arturo\",\n        \"lastname\": \"Abad\",\n        \"secondsurname\": \"Varela\",\n        \"age\": 28,\n        \"gender\": \"Masculino\",\n        \"birthdate\": \"1985-11-13\",\n        \"position\": \"Desarrollador\"\n    },\n    {\n        \"firstname\": \"Marisol\",\n        \"middlename\": \"Roberta\",\n        \"lastname\": \"Abad\",\n        \"secondsurname\": \"Nuñez\",\n        \"age\": 18,\n        \"gender\": \"Femenino\",\n        \"birthdate\": \"1985-11-13\",\n        \"position\": \"Desarrolador\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "getById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/employees/v1/api/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"v1",
+						"api",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "NotFound",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/employees/v1/api/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"v1",
+								"api",
+								"2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 May 2025 21:56:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"ERR_EMPLOYEE_001\",\n    \"message\": \"Employee not found.\",\n    \"timestamp\": \"2025-05-25T15:56:04.1203748\"\n}"
+				},
+				{
+					"name": "InternalError",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/employees/v1/api/\"\"",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"v1",
+								"api",
+								"\"\""
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 May 2025 21:57:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"ERR_GEN_001\",\n    \"message\": \"An unexpected error occurred.\",\n    \"details\": [\n        \"Method parameter 'idEmployee': Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; For input string: \\\"\\\"\\\"\\\"\"\n    ],\n    \"timestamp\": \"2025-05-25T15:57:03.6505279\"\n}"
+				}
+			]
+		},
+		{
+			"name": "InsertaEmpleado",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"Marisol\",\r\n    \"middlename\": \"Roberta\",\r\n    \"lastname\": \"Abad\",\r\n    \"secondsurname\": \"Nuñez\",\r\n    \"age\": \"18\",\r\n    \"gender\": \"Femenino\",\r\n    \"birthdate\": \"1985-11-13\",\r\n    \"position\": \"Desarrolador\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/v1/api",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"v1",
+						"api"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Insert OK",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Marisol\",\r\n    \"middlename\": \"Roberta\",\r\n    \"lastname\": \"Abad\",\r\n    \"secondsurname\": \"Nuñez\",\r\n    \"age\": \"18\",\r\n    \"gender\": \"Femenino\",\r\n    \"birthdate\": \"1985-11-13\",\r\n    \"position\": \"Desarrolador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/employees/v1/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"v1",
+								"api"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 May 2025 23:33:23 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"firstname\": \"Marisol\",\n    \"middlename\": \"Roberta\",\n    \"lastname\": \"Abad\",\n    \"secondsurname\": \"Nuñez\",\n    \"age\": 18,\n    \"gender\": \"Femenino\",\n    \"birthdate\": \"1985-11-13\",\n    \"position\": \"Desarrolador\"\n}"
+				},
+				{
+					"name": "Invalid Parameters",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Marisol\",\r\n    \"middlename\": \"Roberta\",\r\n    \"lastname\": \"Abad\",\r\n    \"secondsurname\": null,\r\n    \"age\": null,\r\n    \"gender\": null,\r\n    \"birthdate\": \"1985-11-13\",\r\n    \"position\": \"Desarrolador\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/employees/v1/api",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"v1",
+								"api"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 25 May 2025 23:35:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"ERR_EMPLOYEE_002\",\n    \"message\": \"Invalid employee parameters.\",\n    \"details\": [\n        \"Field secondsurname cannot be null.\",\n        \"Field gender cannot be empty or null.\",\n        \"Field age cannot be null.\"\n    ],\n    \"timestamp\": \"2025-05-25T17:35:32.6409507\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ActualizaEmpleado",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"Valeria\",\r\n    \"middlename\": \"Alexia\",\r\n    \"lastname\": \"Abad\",\r\n    \"secondsurname\": \"this\",\r\n    \"age\": \"18\",\r\n    \"gender\": \"Femenino\",\r\n    \"birthdate\": \"1985-11-13\",\r\n    \"position\": \"Nada\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/employees/v1/api/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"v1",
+						"api",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\": \"Valeria\",\r\n    \"middlename\": \"Alexia\",\r\n    \"lastname\": \"Abad\",\r\n    \"secondsurname\": \"this\",\r\n    \"age\": \"18\",\r\n    \"gender\": \"Femenino\",\r\n    \"birthdate\": \"1985-11-13\",\r\n    \"position\": \"Nada\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/employees/v1/api/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"employees",
+								"v1",
+								"api",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 26 May 2025 00:35:41 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"idemployee\": 2,\n    \"firstname\": \"Valeria\",\n    \"middlename\": \"Alexia\",\n    \"lastname\": \"Abad\",\n    \"secondsurname\": \"this\",\n    \"age\": 18,\n    \"gender\": \"Femenino\",\n    \"birthdate\": \"1985-11-13\",\n    \"position\": \"Nada\"\n}"
+				}
+			]
+		}
+	]
+}
